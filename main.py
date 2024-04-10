@@ -14,9 +14,28 @@ class WelcomeScreen(QMainWindow):
 
         loadUi("welcome.ui",self)
 
+        self.login.clicked.connect(self.gotologin)
+        def gotologin(self):
+            widget.addWidget(LoginScreen)
+
+            widget.setCurrentIndex(widget.currentIndex()+1)
 
 
-#main
+
+class LoginScreen(QMainWindow):
+    def __init__(self):
+        super(LoginScreen,self).__init__()
+        loadUi("login.ui",self)
+
+
+
+
+
+
+
+
+#main fxn .....
+
 
 
 app = QApplication(sys.argv)
@@ -30,6 +49,11 @@ try:
     sys.exit(app.exec_())
 except:
     print("Exit") 
+
+
+
+
+
 
 
 
